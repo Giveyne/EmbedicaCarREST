@@ -87,7 +87,7 @@ public class TestTaskApplicationTests {
     }
 
     @Test
-    public void contextLoads(){
+    public void saveController(){
         try {
             carRepository.delete(carRepository.findOne(CarSpec.carNumber(car.getCarNumber())).get());
         }
