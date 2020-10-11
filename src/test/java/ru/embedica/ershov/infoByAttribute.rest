@@ -2,9 +2,11 @@ GET http://localhost:807/base/car/info
 Content-Type: application/json
 
 {
+
+  "carNumber": "T344BA750",
   "brand": "bmw",
-  "color": "red"
+  "color": "white",
+  "yearOfIssue": 2015
 
 }
-
 ###
