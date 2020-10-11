@@ -22,7 +22,6 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import java.sql.SQLException;
 import java.util.List;
 
 
@@ -47,7 +46,7 @@ public class CarServiceImp implements CarService{
                 log.info("Save car by car number", car.getCarNumber());
                 return carRepository.save(car).getId();
             }
-        log.info("Not save car by car number", car.getCarNumber());
+        log.info("Car with the same number already exists", car.getCarNumber());
         return car.getId();
     }
 
