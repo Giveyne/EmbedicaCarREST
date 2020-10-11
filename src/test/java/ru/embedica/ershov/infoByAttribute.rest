@@ -1,0 +1,10 @@
+GET http://localhost:807/base/car/info
+Content-Type: application/json
+
+{
+  "brand": "bmw",
+  "color": "red"
+
+}
+
+###

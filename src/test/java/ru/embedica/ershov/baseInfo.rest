@@ -1,0 +1,4 @@
+GET http://localhost:807/base/info
+Content-Type: application/json
+
+###

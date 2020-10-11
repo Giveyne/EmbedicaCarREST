@@ -1,0 +1,13 @@
+POST http://localhost:807/base/car/save
+Content-Type: application/json
+
+{
+
+"carNumber": "T344BA750",
+"brand": "bmw",
+"color": "white",
+"yearOfIssue": 2015
+
+}
+
+###
