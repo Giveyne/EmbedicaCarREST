@@ -22,6 +22,7 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.sql.SQLException;
 import java.util.List;
 
 
@@ -35,8 +36,13 @@ public class CarServiceImp implements CarService{
     private EntityManager em;
 
     @CachePut(value = "saveCar")
-    public Long save(Car car){
+    public Long save(Car car) throws ExceptionInInitializerError {
+             if (car.getCarNumber() == null) {
+                 log.info("car without number. Return sqlException");
+                 throw new ExceptionInInitializerError("Don't save without number!");
+             }
             log.info("Try save car by car number", car.getCarNumber());
+
             if(carRepository.findOne(CarSpec.carNumber(car.getCarNumber())).isEmpty()) {
                 log.info("Save car by car number", car.getCarNumber());
                 return carRepository.save(car).getId();

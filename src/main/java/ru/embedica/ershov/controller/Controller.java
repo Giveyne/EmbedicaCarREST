@@ -20,11 +20,17 @@ public class Controller {
     private CarService carService;
 
     @PostMapping("base/car/save")
-    public HttpEntity<String> save(@RequestBody Car car) throws Exception {
-        Long id = carService.save(car);
-        return id != null ? ResponseEntity
-                .ok("Car adding to base with id: " + id) : ResponseEntity.badRequest().body("such a machine already exists ");
-    }
+    public HttpEntity<String> save(@RequestBody Car car){
+        try {
+            Long id = carService.save(car);
+            return id != null ? ResponseEntity
+                    .ok("Car adding to base with id: " + id) : ResponseEntity.badRequest().body("such a machine already exists ");
+
+        }
+        catch (ExceptionInInitializerError e){
+            return ResponseEntity.badRequest().body("Don't save without number!");
+        }
+         }
 
     @GetMapping("base/car/info")
     public HttpEntity<List<Car>> getInfo(@RequestBody Car object) {
