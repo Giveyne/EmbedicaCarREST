@@ -37,7 +37,7 @@ public class TestTaskApplicationTests {
     @Before
     public void setData() {
 
-        car.setCarNumber("T224AP750");
+        car.setCarNumber("T224AP150");
         car.setBrand("Lada");
         car.setColor("red");
         car.setYearOfIssue(yearOfIssue);

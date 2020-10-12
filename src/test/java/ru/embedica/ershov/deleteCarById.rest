@@ -1,4 +1,4 @@
-POST http://localhost:807/base/car/12/delete/
+POST http://localhost:807/base/car/100/delete/
 Content-Type: application/json
 
 ###

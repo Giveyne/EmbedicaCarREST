@@ -35,7 +35,7 @@ public class CarServiceImp implements CarService{
     private EntityManager em;
 
     @CachePut(value = "saveCar")
-    public Long save(Car car) throws ExceptionInInitializerError {
+    public Long save(Car car) throws ExceptionInInitializerError, IllegalArgumentException{
              if (car.getCarNumber() == null) {
                  log.info("car without number. Return sqlException");
                  throw new ExceptionInInitializerError("Don't save without number!");
